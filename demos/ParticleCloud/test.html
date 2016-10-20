@@ -1,6 +1,6 @@
----------------------------
-<!-- Replace your-device-ID-goes-here with your actual device ID
+<!-- Front end for blinking an LED remotely using a local instance of the Particle Cloud. Replace your-ip-address with IP address of local instance of the Particle Cloud, your-device-ID-goes-here with your actual device ID,
 and replace your-access-token-goes-here with your actual access token-->
+
 <!DOCTYPE>
 <html>
   <body>
@@ -8,7 +8,7 @@ and replace your-access-token-goes-here with your actual access token-->
   <br>
   <br>
   <br>
-  <form action="https://api.particle.io/v1/devices/your-device-ID-goes-here/led?access_token=your-access-token-goes-here" method="POST">
+  <form action="http://your-ip-address/v1/devices/your-device-ID-goes-here/led?access_token=your-access-token-goes-here" method="POST">
     Tell your device what to do!<br>
     <br>
     <input type="radio" name="args" value="on">Turn the LED on.
@@ -21,4 +21,3 @@ and replace your-access-token-goes-here with your actual access token-->
   </center>
   </body>
 </html>
----------------------------
