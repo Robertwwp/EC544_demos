@@ -1,6 +1,5 @@
 #include "math.h"
 
-int led = D7;
 Servo wheels; // servo for turning the wheels
 Servo esc; // not actually a servo, but controlled like one!
 bool startup = true; // used to ensure startup only happens once
