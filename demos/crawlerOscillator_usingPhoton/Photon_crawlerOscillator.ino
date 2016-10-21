@@ -54,10 +54,3 @@ void oscillate(){
 void loop(){
   oscillate();
 }
-
-void OnOff(){
-  digitalWrite(led, HIGH);  // Turn ON the LED
-  delay(5000);              // Wait for 1000mS = 1 second
-  digitalWrite(led, LOW);   // Turn OFF the LED
-  delay(2000);              // Wait for 1 second
-}
