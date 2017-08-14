@@ -1,4 +1,4 @@
-var SerialPort = require("serialport");
+var SerialPort = require('serialport');
 var app = require('express')();
 var xbee_api = require('xbee-api');
 
@@ -19,7 +19,7 @@ portConfig = {
 };
 
 var sp;
-sp = new SerialPort.SerialPort(portName, portConfig);
+sp = new SerialPort(portName, portConfig);
 
 
 //Create a packet to be sent to all other XBEE units on the PAN.

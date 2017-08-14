@@ -42,14 +42,16 @@ void calibrateESC(){
  *  change speed and turn values.
  */
 void oscillate(){
-  for (int i =0; i < 360; i++){
+  /*for (int i =0; i < 360; i++){
     double rad = degToRad(i);
     double speedOffset = sin(rad) * maxSpeedOffset;
-    double wheelOffset = sin(rad) * maxWheelOffset;
+    //double wheelOffset = sin(rad) * maxWheelOffset;
     esc.write(90 + speedOffset);
-    wheels.write(90 + wheelOffset);
+    //wheels.write(90 + wheelOffset);
     delay(50);
-  }
+  }*/
+  esc.write(90);
+  
 }
  
 void loop()
