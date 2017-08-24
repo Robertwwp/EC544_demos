@@ -1,17 +1,17 @@
 #include <Servo.h>
- 
+
 Servo wheels; // servo for turning the wheels
 Servo esc; // not actually a servo, but controlled like one!
 bool startup = true; // used to ensure startup only happens once
 int startupDelay = 1000; // time to pause at each calibration step
 double maxSpeedOffset = 45; // maximum speed magnitude, in servo 'degrees'
 double maxWheelOffset = 85; // maximum wheel turn magnitude, in servo 'degrees'
- 
+
 void setup()
 {
   wheels.attach(8); // initialize wheel servo to Digital IO Pin #8
   esc.attach(9); // initialize ESC to Digital IO Pin #9
-  /*  If you're re-uploading code via USB while leaving the ESC powered on, 
+  /*  If you're re-uploading code via USB while leaving the ESC powered on,
    *  you don't need to re-calibrate each time, and you can comment this part out.
    */
   calibrateESC();
@@ -38,25 +38,22 @@ void calibrateESC(){
     esc.write(90); // reset the ESC to neutral (non-moving) value
 }
 
-/* Oscillate between various servo/ESC states, using a sine wave to gradually 
+/* Oscillate between various servo/ESC states, using a sine wave to gradually
  *  change speed and turn values.
  */
 void oscillate(){
-  /*for (int i =0; i < 360; i++){
+  for (int i =0; i < 360; i++){
     double rad = degToRad(i);
     double speedOffset = sin(rad) * maxSpeedOffset;
-    //double wheelOffset = sin(rad) * maxWheelOffset;
+    double wheelOffset = sin(rad) * maxWheelOffset;
     esc.write(90 + speedOffset);
-    //wheels.write(90 + wheelOffset);
+    wheels.write(90 + wheelOffset);
     delay(50);
-  }*/
-  esc.write(90);
-  
+  }
+
 }
- 
+
 void loop()
 {
    oscillate();
 }
-
-
