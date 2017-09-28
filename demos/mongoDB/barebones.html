@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html>
+  <!-- EC544 Fall 2017, Basic HTML, socket.io node.js, MongoDB example -->
+  <head>
+    <!-- Can put CSS style stuff, etc. here -->
+  </head>
+
+  <body>
+
+    <center><p>Tap key to display new number:</p>
+    <font size="20" color="blue"><p id="number"></p></font></center>
+
+    <!-- Include link to socket.io -->
+    <script src="/socket.io/socket.io.js"></script>
+
+    <!-- On key press, pass action to socket -->
+    <script>
+      var socket = io();
+      document.onkeydown = function(e) {
+        socket.emit('command', 'pressed');
+      }
+    </script>
+
+    <!-- Listen for message on socket, then display -->
+    <script>
+      var socket = io();
+      socket.on('message', function(message){
+        document.getElementById("number").innerHTML = message;
+      });
+    </script>
+
+  </body>
+
+</html>
