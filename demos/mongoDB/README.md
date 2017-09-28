@@ -11,11 +11,13 @@ This example creates a MongoDB record of a random value. This random value is up
 Create the first document (record) using:
 
 ```
-node create_db.js```
-
+node create_db.js
+```
 
 Then  run:
+
 ```
-node html_db.js ```
+node html_db.js
+```
 
 This will host a server with a frontend defined by the ```barebones.html``` file. Socket.io maintains the connection between node.js and the html file.
